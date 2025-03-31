@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Heart Disease Prediction</title>
+    <style>
+        body {
+            font-family: 'Outfit', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f9f9f9;
+        }
+
+        .container {
+            text-align: center;
+            color: #333;
+            width: 50%;
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .scrollable-container {
+            width: 100%;
+            max-height: 600px;
+            overflow-y: auto;
+            margin: 0 auto;
+            border-radius: 10px;
+            padding: 20px;
+            background: #e9ecef;
+        }
+
+        .scrollable-container::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        .scrollable-container::-webkit-scrollbar-thumb {
+            background-color: #555;
+            border-radius: 5px;
+        }
+
+        .scrollable-container::-webkit-scrollbar-track {
+            background-color: #ddd;
+            border-radius: 5px;
+        }
+
+        form {
+            width: 100%;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            color: #555;
+            margin: 15px 0 5px;
+            font-size: 18px;
+        }
+
+        input, textarea, button {
+            width: 100%;
+            padding: 12px;
+            margin-top: 5px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .custom-btn {
+            background-color: #2563EB;
+            color: #FFFFFF;
+            font-size: 18px;
+            font-family: 'Outfit', sans-serif;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+            padding: 14px;
+            border-radius: 8px;
+            transition: background-color 0.3s;
+            margin-top: 15px;
+        }
+
+        .custom-btn:hover {
+            background-color: #1D4ED8;
+        }
+
+        .error {
+            color: red;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Heart Disease Prediction</h1>
+        <div class="scrollable-container">
+            <form action="/predict" method="POST">
+                <label for="age">Age:</label>
+                <input type="text" name="age" required>
+
+                <label for="sex">Sex (0 for female, 1 for male):</label>
+                <input type="text" name="sex" required>
+
+                <label for="cp">Chest Pain Type (0-3):</label>
+                <input type="text" name="cp" required>
+
+                <label for="trestbps">Resting Blood Pressure:</label>
+                <input type="text" name="trestbps" required>
+
+                <label for="chol">Serum Cholesterol:</label>
+                <input type="text" name="chol" required>
+
+                <label for="fbs">Fasting Blood Sugar:</label>
+                <input type="text" name="fbs" required>
+
+                <label for="restecg">Resting Electrocardiographic Results:</label>
+                <input type="text" name="restecg" required>
+
+                <label for="thalach">Maximum Heart Rate Achieved:</label>
+                <input type="text" name="thalach" required>
+
+                <label for="exang">Exercise Induced Angina (0 for no, 1 for yes):</label>
+                <input type="text" name="exang" required>
+
+                <label for="oldpeak">ST Depression Induced by Exercise Relative to Rest:</label>
+                <input type="text" name="oldpeak" required>
+
+                <label for="slope">Slope of the Peak Exercise ST Segment:</label>
+                <input type="text" name="slope" required>
+
+                <label for="ca">Number of Major Vessels Colored by Fluoroscopy (0-3):</label>
+                <input type="text" name="ca" required>
+
+                <label for="thal">Thalassemia:</label>
+                <input type="text" name="thal" required>
+                
+                <button type="submit" class="custom-btn">Predict</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
